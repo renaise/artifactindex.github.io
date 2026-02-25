@@ -1,45 +1,78 @@
 (function () {
-  const ARTIFACTS = [
-    { id: '1', code: 'AI-001', type: 'chapter', title: 'Chapter 001', meta: 'Documented event', date: '2024', link: '#' },
-    { id: '2', code: 'AI-002', type: 'chapter', title: 'Chapter 002', meta: 'Documented event', date: '2024', link: '#' },
-    { id: '3', code: 'AI-003', type: 'chapter', title: 'Chapter 003', meta: 'Documented event', date: '2024', link: '#' },
-    { id: '4', code: 'AI-004', type: 'chapter', title: 'Chapter 004', meta: 'Documented event', date: '2025', link: '#' },
-    { id: '5', code: 'AI-005', type: 'chapter', title: 'Chapter 005', meta: 'Documented event', date: '2025', link: '#' },
-    { id: '6', code: 'AI-006', type: 'content', title: 'ENTER · Substack', meta: 'Monthly archive', date: '—', link: '#' },
-    { id: '7', code: 'AI-007', type: 'content', title: 'Sights: Science // Fiction', meta: 'Event documentation', date: '2025', link: '#' },
-    { id: '8', code: 'AI-008', type: 'production', title: 'Lighthouse Brand Sprint', meta: 'Client · Brand', date: '2026', link: '#' },
-    { id: '9', code: 'AI-009', type: 'production', title: 'Studio project archive', meta: 'Client work', date: '—', link: '#' },
-    { id: '10', code: 'AI-010', type: 'cultural', title: 'Object catalog', meta: 'Provenance & attribution', date: 'Building', link: '#' },
-    { id: '11', code: 'AI-011', type: 'chapter', title: 'Lab + Stage', meta: 'WhiteBox · BlackBox', date: '—', link: '#' },
-    { id: '12', code: 'AI-012', type: 'content', title: 'Press & social', meta: 'Content pipeline', date: '—', link: '#' },
+  var ARENA_CHANNEL = 'https://www.are.na/tran-lam/artifacts-52ar7tn1ouk';
+
+  var ARTIFACTS = [
+    { id: '13435912', type: 'object', title: 'Traditional Indian kettles with handmade folk art', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/13435912/square_1536662660f0b7b27e101845df8d7b87.jpg', link: 'https://www.are.na/block/13435912' },
+    { id: '8231653',  type: 'object', title: 'Ceramic Doublet, the Armor with the Negative AC', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/8231653/square_0cc19491c899333c564e1c48ea28607.png', link: 'https://www.are.na/block/8231653' },
+    { id: '7880643',  type: 'object', title: 'Hunting sword with scabbard (Germany, ca. 1740)', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/7880643/square_4b51892e61c80e09af8739f37b9184d2.jpg', link: 'https://www.are.na/block/7880643' },
+    { id: '13979194', type: 'nature', title: 'Zenopsis-nebulosa transparent specimen', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/13979194/square_65afc0530bc583c163eb30407550954f.jpg', link: 'https://www.are.na/block/13979194' },
+    { id: '12394305', type: 'object', title: 'Honeycomb amphora', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/12394305/square_c5bbb0421875c621ca14edd388be4777.png', link: 'https://www.are.na/block/12394305' },
+    { id: '1375412',  type: 'fashion', title: '\u201cBarefoot in the Grass\u201d sandals, Herbert & Beth Levine (c.1960s)', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/1375412/square_bc797d78de04de88482d82b8d5fecdeb', link: 'https://www.are.na/block/1375412' },
+    { id: '9326290',  type: 'design', title: 'INFOBAR by Naoto Fukasawa (2003)', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/9326290/square_74fc69fd107e6b21ae9140a541c4bfa5.jpg', link: 'https://www.are.na/block/9326290' },
+    { id: '10104027', type: 'design', title: 'Abitacolo, Bruno Munari', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/10104027/square_2f649202dc79de5435625dc3d591fb9a.jpg', link: 'https://www.are.na/block/10104027' },
+    { id: '12490899', type: 'fashion', title: 'Bj\u00f6rk by M/M Paris', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/12490899/square_22fd3e2e0349cc4695d92b439ddc593a.jpg', link: 'https://www.are.na/block/12490899' },
+    { id: '2588824',  type: 'fashion', title: 'Craig Green for Moncler', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/2588824/square_4558d56f053ffa009568fa3185b679e0.jpg', link: 'https://www.are.na/block/2588824' },
+    { id: '5959203',  type: 'design', title: 'Phil Knight\u2019s business card', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/5959203/square_58fc7c70a168d42045fda0e1429aa979.jpg', link: 'https://www.are.na/block/5959203' },
+    { id: '2131898',  type: 'space', title: 'New York Review of Books office', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/2131898/square_038c52317c73c96a9b6fdd8212cd6b6a.jpg', link: 'https://www.are.na/block/2131898' },
+    { id: '12778438', type: 'design', title: 'Better Air Benches, Wayward', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/12778438/square_9b02e9e7d00a0a900a2c3e4632d98ce8.jpg', link: 'https://www.are.na/block/12778438' },
+    { id: '14497228', type: 'object', title: 'Ports', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/14497228/square_6c518c30e599452f7cf1c0c396231a5e.png', link: 'https://www.are.na/block/14497228' },
+    { id: '10190353', type: 'nature', title: 'Kumpula botanic garden, Helsinki, Finland', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/10190353/square_822451378876f0c780a39c463e3c0062.jpg', link: 'https://www.are.na/block/10190353' },
+    { id: '1071305',  type: 'fashion', title: 'Cecilia Poupon', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/1071305/square_e1bf121ff2f3a69e3e7d9bdf6e49e3b7', link: 'https://www.are.na/block/1071305' },
+    { id: '1604714',  type: 'design', title: 'The Lawless Chair (designed by Evan Fay)', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/1604714/square_bc93a1e5dc7fc24b13ac1edcd85dbe0b.jpg', link: 'https://www.are.na/block/1604714' },
+    { id: '5717330',  type: 'object', title: 'Amy Brener Flexi-Shield (Eostra), 2019', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/5717330/square_0333e0aa1cee6857b2c0ffc7463d4a88.jpg', link: 'https://www.are.na/block/5717330' },
+    { id: '3287975',  type: 'object', title: 'Bubble Gum', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/3287975/square_752d038d3482356bb5b64a231dbc7db0.jpg', link: 'https://www.are.na/block/3287975' },
+    { id: '6326500',  type: 'object', title: 'French Medieval Song Book', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/6326500/square_7b0cf7fb32a2ed809ea58d2c89aa9bd0.jpg', link: 'https://www.are.na/block/6326500' },
+    { id: '47066',    type: 'design', title: 'Maltron \u2014 Single Handed Keyboard', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/47066/square_2faabf519f5edd2d93029f18f3e262a0.png', link: 'https://www.are.na/block/47066' },
+    { id: '15517512', type: 'object', title: 'Scrimshawed double comb, sailors love token, British, mid-19th c.', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/15517512/square_c0696e1c25658c13d9cfc1fd5f92f4cf.jpg', link: 'https://www.are.na/block/15517512' },
+    { id: '8348137',  type: 'nature', title: 'Morning. Parrot Toadstool.', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/8348137/square_2b493ea445703c0f976c11e248599568.jpg', link: 'https://www.are.na/block/8348137' },
+    { id: '14781482', type: 'object', title: 'German Panther, 2007', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/14781482/square_4e82673f29192f50d177b7e23fafb0f9.png', link: 'https://www.are.na/block/14781482' },
+    { id: '15287065', type: 'design', title: 'Wilcox Industries RAID-X', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/15287065/square_cff7cfa8326f54b1bd78da36048d75fb.jpg', link: 'https://www.are.na/block/15287065' },
+    { id: '15373663', type: 'space', title: 'Nordic Food Lab', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/15373663/square_5d0fdbbb26c779f38ccd32e1f69fb120.jpg', link: 'https://www.are.na/block/15373663' },
+    { id: '4976266',  type: 'space', title: 'Point of Sale @ Hessel Museum of Art', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/4976266/square_92be3ac48ce85f2db81a48a0c34511bb.jpg', link: 'https://www.are.na/block/4976266' },
+    { id: '5603332',  type: 'design', title: 'Harry Nuriev', thumb: 'https://d2w9rnfcy7mm78.cloudfront.net/5603332/square_f249355f5b8917f8c0f4a0715440ce5f5.jpg', link: 'https://www.are.na/block/5603332' },
   ];
 
-  const typeLabels = {
-    chapter: 'Chapters',
-    content: 'Content',
-    production: 'Production',
-    cultural: 'Cultural',
+  var ATLAS = [
+    { id: 'wb-001', code: 'WB-001', name: 'WhiteBox 001', format: 'Lab', chapter: '001', desc: 'Material & scientific exploration', location: 'New York City', status: 'Archived' },
+    { id: 'bb-001', code: 'BB-001', name: 'BlackBox 001', format: 'Stage', chapter: '001', desc: 'Digital fiction & immersive', location: 'New York City', status: 'Archived' },
+    { id: 'wb-002', code: 'WB-002', name: 'WhiteBox 002', format: 'Lab', chapter: '002', desc: 'Material & scientific exploration', location: 'New York City', status: 'Archived' },
+    { id: 'bb-002', code: 'BB-002', name: 'BlackBox 002', format: 'Stage', chapter: '002', desc: 'Digital fiction & immersive', location: 'New York City', status: 'Archived' },
+    { id: 'wb-003', code: 'WB-003', name: 'WhiteBox 003', format: 'Lab', chapter: '003', desc: 'Material & scientific exploration', location: 'New York City', status: 'Archived' },
+    { id: 'bb-003', code: 'BB-003', name: 'BlackBox 003', format: 'Stage', chapter: '003', desc: 'Digital fiction & immersive', location: 'New York City', status: 'Archived' },
+    { id: 'wb-004', code: 'WB-004', name: 'WhiteBox 004', format: 'Lab', chapter: '004', desc: 'Material & scientific exploration', location: 'New York City', status: 'Archived' },
+    { id: 'bb-004', code: 'BB-004', name: 'BlackBox 004', format: 'Stage', chapter: '004', desc: 'Digital fiction & immersive', location: 'New York City', status: 'Archived' },
+    { id: 'wb-005', code: 'WB-005', name: 'WhiteBox 005', format: 'Lab', chapter: '005', desc: 'Material & scientific exploration', location: 'New York City', status: 'Active' },
+    { id: 'bb-005', code: 'BB-005', name: 'BlackBox 005', format: 'Stage', chapter: '005', desc: 'Digital fiction & immersive', location: 'New York City', status: 'Active' },
+  ];
+
+  var typeLabels = {
+    object: 'Object',
+    design: 'Design',
+    nature: 'Nature',
+    space: 'Space',
+    fashion: 'Fashion',
   };
 
-  let currentType = 'all';
-  let currentQuery = '';
-  let viewMode = 'grid'; // 'list' | 'grid'
-  let focusedIndex = 0;
+  var currentType = 'all';
+  var currentQuery = '';
+  var viewMode = 'grid';
+  var focusedIndex = 0;
 
-  const $list = document.getElementById('artifact-list');
-  const $grid = document.getElementById('artifact-grid');
-  const $meta = document.getElementById('result-meta');
-  const $empty = document.getElementById('empty-state');
-  const $search = document.getElementById('search-input');
-  const $clear = document.getElementById('search-clear');
-  const $viewLabel = document.getElementById('view-label');
-  const $overview = document.getElementById('overview-header');
-  const $overviewCount = document.getElementById('overview-count');
+  var $list = document.getElementById('artifact-list');
+  var $grid = document.getElementById('artifact-grid');
+  var $meta = document.getElementById('result-meta');
+  var $empty = document.getElementById('empty-state');
+  var $search = document.getElementById('search-input');
+  var $clear = document.getElementById('search-clear');
+  var $viewLabel = document.getElementById('view-label');
+  var $overview = document.getElementById('overview-header');
+  var $overviewCount = document.getElementById('overview-count');
+  var $atlasGrid = document.getElementById('atlas-grid');
 
   function matchesQuery(artifact) {
     if (!currentQuery.trim()) return true;
-    const q = currentQuery.toLowerCase();
-    const str = [artifact.code, artifact.title, artifact.meta, artifact.date, typeLabels[artifact.type]].join(' ').toLowerCase();
+    var q = currentQuery.toLowerCase();
+    var str = [artifact.title, typeLabels[artifact.type] || artifact.type].join(' ').toLowerCase();
     return str.includes(q);
   }
 
@@ -55,34 +88,32 @@
   }
 
   function escapeHtml(s) {
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.textContent = s;
     return div.innerHTML;
   }
 
   function renderListItem(artifact) {
-    const li = document.createElement('li');
-    const href = artifact.link || '#';
+    var li = document.createElement('li');
+    var href = artifact.link || '#';
     li.innerHTML =
-      '<a class="artifact-list-link" href="' + href + '" data-index="-1" data-code="' + escapeHtml(artifact.code) + '">' +
-        '<span class="artifact-list-code">' + escapeHtml(artifact.code) + '</span>' +
+      '<a class="artifact-list-link" href="' + href + '" target="_blank" rel="noopener" data-index="-1">' +
+        '<span class="artifact-list-thumb"><img src="' + escapeHtml(artifact.thumb) + '" alt="" loading="lazy"></span>' +
         '<span class="artifact-list-title">' + escapeHtml(artifact.title) + '</span>' +
+        '<span class="artifact-list-type">' + escapeHtml(typeLabels[artifact.type] || artifact.type) + '</span>' +
       '</a>';
     return li;
   }
 
   function renderCard(artifact) {
-    const li = document.createElement('li');
-    const typeLabel = typeLabels[artifact.type] || artifact.type;
-    const href = artifact.link || '#';
-    const fileCode = artifact.code.replace(/-/, '_');
-    const dateLabel = (artifact.date && artifact.date !== '—') ? artifact.date : typeLabel;
+    var li = document.createElement('li');
+    var typeLabel = typeLabels[artifact.type] || artifact.type;
+    var href = artifact.link || '#';
     li.innerHTML =
       '<div class="artifact-card" data-id="' + artifact.id + '">' +
-        '<span class="artifact-aux-circle" aria-hidden="true"><span class="artifact-aux">' + escapeHtml(dateLabel) + '</span></span>' +
-        '<a class="artifact-thumb-link" href="' + href + '" data-index="-1" title="' + escapeHtml(artifact.title) + '">' +
+        '<a class="artifact-thumb-link" href="' + href + '" target="_blank" rel="noopener" data-index="-1" title="' + escapeHtml(artifact.title) + '">' +
           '<div class="artifact-thumb">' +
-            '<div class="artifact-thumb-inner">' + escapeHtml(typeLabel) + '</div>' +
+            '<img class="artifact-thumb-img" src="' + escapeHtml(artifact.thumb) + '" alt="' + escapeHtml(artifact.title) + '" loading="lazy">' +
             '<div class="artifact-actions">' +
               '<span class="btn btn-view">View</span>' +
               '<button type="button" class="btn btn-copy" title="Copy link">Copy link</button>' +
@@ -90,18 +121,17 @@
           '</div>' +
         '</a>' +
         '<div class="artifact-body">' +
-          '<a class="artifact-filename" href="' + href + '" data-index="-1">' + escapeHtml(fileCode) + '</a>' +
-          '<div class="artifact-meta">' + escapeHtml(artifact.title) + '</div>' +
+          '<div class="artifact-title-text">' + escapeHtml(artifact.title) + '</div>' +
+          '<div class="artifact-meta">' + escapeHtml(typeLabel) + '</div>' +
         '</div>' +
       '</div>';
-    const card = li.firstElementChild;
-    const copyBtn = card.querySelector('.btn-copy');
+    var card = li.firstElementChild;
+    var copyBtn = card.querySelector('.btn-copy');
     if (copyBtn) {
       copyBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        var url = window.location.origin + window.location.pathname + '?id=' + artifact.id;
-        if (artifact.link && artifact.link !== '#') url = artifact.link;
+        var url = artifact.link || (window.location.origin + window.location.pathname + '?id=' + artifact.id);
         navigator.clipboard.writeText(url).then(function () {
           copyBtn.textContent = 'Copied';
           setTimeout(function () { copyBtn.textContent = 'Copy link'; }, 1500);
@@ -109,6 +139,26 @@
       });
     }
     return li;
+  }
+
+  function renderAtlas() {
+    if (!$atlasGrid) return;
+    $atlasGrid.innerHTML = '';
+    ATLAS.forEach(function (space) {
+      var div = document.createElement('div');
+      var statusClass = space.status === 'Active' ? 'atlas-status--active' : 'atlas-status--archived';
+      div.className = 'atlas-card';
+      div.innerHTML =
+        '<div class="atlas-card-header">' +
+          '<span class="atlas-code">' + escapeHtml(space.code) + '</span>' +
+          '<span class="atlas-status ' + statusClass + '">' + escapeHtml(space.status) + '</span>' +
+        '</div>' +
+        '<div class="atlas-name">' + escapeHtml(space.name) + '</div>' +
+        '<div class="atlas-format">' + escapeHtml(space.format) + ' \u00b7 Chapter ' + escapeHtml(space.chapter) + '</div>' +
+        '<div class="atlas-desc">' + escapeHtml(space.desc) + '</div>' +
+        '<div class="atlas-location">' + escapeHtml(space.location) + '</div>';
+      $atlasGrid.appendChild(div);
+    });
   }
 
   function getFocusableLinks() {
@@ -119,21 +169,21 @@
   }
 
   function setFocusIndex(index) {
-    const links = getFocusableLinks();
+    var links = getFocusableLinks();
     if (links.length === 0) return;
     focusedIndex = Math.max(0, Math.min(index, links.length - 1));
     links[focusedIndex].focus();
   }
 
   function updateFocusableIndices() {
-    const links = getFocusableLinks();
+    var links = getFocusableLinks();
     links.forEach(function (link, i) {
       link.setAttribute('data-index', i);
     });
   }
 
   function render() {
-    const list = getFiltered();
+    var list = getFiltered();
     $list.innerHTML = '';
     $grid.innerHTML = '';
     list.forEach(function (artifact) {
@@ -164,9 +214,9 @@
   }
 
   document.addEventListener('keydown', function (e) {
-    const links = getFocusableLinks();
+    var links = getFocusableLinks();
     if (links.length === 0) return;
-    if (document.activeElement.closest('.search-input')) return;
+    if (document.activeElement === $search) return;
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
       e.preventDefault();
       setFocusIndex(focusedIndex + 1);
@@ -201,9 +251,9 @@
   });
 
   document.getElementById('filter-type').addEventListener('click', function (e) {
-    const chip = e.target.closest('.chip--filter');
+    var chip = e.target.closest('.chip--filter');
     if (!chip || chip.id) return;
-    const type = chip.getAttribute('data-type');
+    var type = chip.getAttribute('data-type');
     if (!type) return;
     currentType = type;
     document.querySelectorAll('#filter-type .chip--filter').forEach(function (c) {
@@ -216,12 +266,13 @@
   document.getElementById('view-grid').addEventListener('click', function () { setView('grid'); });
 
   document.addEventListener('focusin', function (e) {
-    const link = e.target.closest('.artifact-list-link, .artifact-thumb-link, .artifact-title');
+    var link = e.target.closest('.artifact-list-link, .artifact-thumb-link');
     if (link && link.hasAttribute('data-index')) {
       focusedIndex = parseInt(link.getAttribute('data-index'), 10);
     }
   });
 
   render();
+  renderAtlas();
   setView('grid');
 })();

@@ -12,15 +12,16 @@
 
 <header class="header">
   <div class="logo-block">
-    <a href="https://www.notion.so/artificehub/ARTIFACT-INDEX-2e208ee1658c80f683fff304ce1f7f94" target="_blank" rel="noopener" class="logo">The Artifact Index</a>
+    <a href="https://www.are.na/tran-lam/artifacts-52ar7tn1ouk" target="_blank" rel="noopener" class="logo">The Artifact Index</a>
     <span class="logo-sub">Artifice World</span>
   </div>
   <form class="search-wrap" role="search" onsubmit="return false;">
-    <input type="search" class="search-input" id="search-input" placeholder="Search by name, type, date…" autocomplete="off" aria-label="Search artifacts">
-    <button type="button" class="search-clear" id="search-clear" aria-label="Clear search" hidden>×</button>
+    <input type="search" class="search-input" id="search-input" placeholder="Search by name, type…" autocomplete="off" aria-label="Search artifacts">
+    <button type="button" class="search-clear" id="search-clear" aria-label="Clear search" hidden>&times;</button>
   </form>
   <nav class="header-nav">
-    <a href="https://www.notion.so/artificehub/ARTIFACT-INDEX-2e208ee1658c80f683fff304ce1f7f94" target="_blank" rel="noopener" class="header-link">Full index (Notion)</a>
+    <a href="https://www.are.na/tran-lam/artifacts-52ar7tn1ouk" target="_blank" rel="noopener" class="header-link">Are.na</a>
+    <a href="https://artificenyc.org" target="_blank" rel="noopener" class="header-link">Artifice NYC</a>
     <a href="about.html" class="header-link">About</a>
     <a href="contact.html" class="header-link">Contact</a>
   </nav>
@@ -31,10 +32,11 @@
     <span class="filter-label">Tags</span>
     <div class="filter-chips" id="filter-type">
       <button type="button" class="chip chip--filter chip--active" data-type="all">All</button>
-      <button type="button" class="chip chip--filter" data-type="chapter">Chapters</button>
-      <button type="button" class="chip chip--filter" data-type="content">Content</button>
-      <button type="button" class="chip chip--filter" data-type="production">Production</button>
-      <button type="button" class="chip chip--filter" data-type="cultural">Cultural</button>
+      <button type="button" class="chip chip--filter" data-type="object">Object</button>
+      <button type="button" class="chip chip--filter" data-type="design">Design</button>
+      <button type="button" class="chip chip--filter" data-type="nature">Nature</button>
+      <button type="button" class="chip chip--filter" data-type="space">Space</button>
+      <button type="button" class="chip chip--filter" data-type="fashion">Fashion</button>
     </div>
   </div>
   <div class="view-toggle">
@@ -60,14 +62,22 @@
   </div>
 </main>
 
+<section class="atlas-section">
+  <div class="atlas-header">
+    <h2 class="atlas-heading">Atlas</h2>
+    <span class="atlas-sub">Lab + Stage · Real spaces</span>
+  </div>
+  <div class="atlas-grid" id="atlas-grid"></div>
+</section>
+
 <footer class="footer">
   <span>The Artifact Index · Studio Artifice LLC · Artifice NYC</span>
   <span class="footer-links">
-    <a href="https://www.notion.so/artificehub/ARTIFACT-INDEX-2e208ee1658c80f683fff304ce1f7f94" target="_blank" rel="noopener">Notion</a>
+    <a href="https://www.are.na/tran-lam/artifacts-52ar7tn1ouk" target="_blank" rel="noopener">Are.na</a>
     <a href="https://artificenyc.org" target="_blank" rel="noopener">artificenyc.org</a>
   </span>
 </footer>
-<p class="keyboard-hint" id="keyboard-hint">Use arrow keys to navigate between assets</p>
+<p class="keyboard-hint" id="keyboard-hint">Use arrow keys to navigate between artifacts</p>
 
 <script src="app.js"></script>
 </body>
