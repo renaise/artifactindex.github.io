@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Artifact Index — Artifice World</title>
-  <meta name="description" content="Search and browse everything Artifice produces and preserves — events, archives, content, cultural objects.">
+  <meta name="description" content="The cultural ecology of Artifice — RADAR, NODES, ATLAS, ARTIFACTS. Sensing signals, activating talent, mapping spaces, archiving what endures.">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +12,7 @@
 
 <header class="header">
   <div class="logo-block">
-    <a href="https://www.are.na/tran-lam/artifacts-52ar7tn1ouk" target="_blank" rel="noopener" class="logo">The Artifact Index</a>
+    <a href="https://artificenyc.org" target="_blank" rel="noopener" class="logo">The Artifact Index</a>
     <span class="logo-sub">Artifice World</span>
   </div>
   <form class="search-wrap" role="search" onsubmit="return false;">
@@ -27,46 +27,94 @@
   </nav>
 </header>
 
-<div class="toolbar">
-  <div class="filter-group">
-    <span class="filter-label">Tags</span>
-    <div class="filter-chips" id="filter-type">
-      <button type="button" class="chip chip--filter chip--active" data-type="all">All</button>
-      <button type="button" class="chip chip--filter" data-type="object">Object</button>
-      <button type="button" class="chip chip--filter" data-type="design">Design</button>
-      <button type="button" class="chip chip--filter" data-type="nature">Nature</button>
-      <button type="button" class="chip chip--filter" data-type="space">Space</button>
-      <button type="button" class="chip chip--filter" data-type="fashion">Fashion</button>
+<nav class="eco-nav" aria-label="Ecosystem">
+  <a href="#radar-section" class="eco-nav-item">
+    <span class="eco-nav-label">Radar</span>
+    <span class="eco-nav-desc">Sensing signals</span>
+  </a>
+  <span class="eco-nav-arrow" aria-hidden="true">&rarr;</span>
+  <a href="#nodes-section" class="eco-nav-item">
+    <span class="eco-nav-label">Nodes</span>
+    <span class="eco-nav-desc">Activating talent</span>
+  </a>
+  <span class="eco-nav-arrow" aria-hidden="true">&rarr;</span>
+  <a href="#atlas-section" class="eco-nav-item">
+    <span class="eco-nav-label">Atlas</span>
+    <span class="eco-nav-desc">Mapping spaces</span>
+  </a>
+  <span class="eco-nav-arrow" aria-hidden="true">&rarr;</span>
+  <a href="#artifacts-section" class="eco-nav-item eco-nav-item--active">
+    <span class="eco-nav-label">Artifacts</span>
+    <span class="eco-nav-desc">Archiving what endures</span>
+  </a>
+</nav>
+
+<section class="eco-section" id="radar-section">
+  <div class="eco-section-header">
+    <h2 class="eco-section-heading">Radar</h2>
+    <span class="eco-section-sub">Sensing emergent signals</span>
+  </div>
+  <p class="eco-section-desc">Actively prospecting new talent, clients, and venues. The sensing layer that feeds every other movement in the ecosystem.</p>
+  <div class="eco-section-cta">
+    <a href="https://www.notion.so/artificehub/19808ee1658c8073b6dcff00b6475cc9?v=19808ee1658c8026adff000c2b6cc2a5" target="_blank" rel="noopener" class="eco-link">Open Radar on Notion &rarr;</a>
+  </div>
+</section>
+
+<section class="eco-section" id="nodes-section">
+  <div class="eco-section-header">
+    <h2 class="eco-section-heading">Nodes</h2>
+    <span class="eco-section-sub">Activating creative talent &amp; IP</span>
+  </div>
+  <p class="eco-section-desc">The contracted creative network — interlinked talent whose work flows through Artifice. Every artifact is credited to a Node.</p>
+  <div class="nodes-grid" id="nodes-grid"></div>
+</section>
+
+<section id="artifacts-section">
+  <div class="toolbar">
+    <div class="filter-group">
+      <span class="filter-label">Tags</span>
+      <div class="filter-chips" id="filter-type">
+        <button type="button" class="chip chip--filter chip--active" data-type="all">All</button>
+        <button type="button" class="chip chip--filter" data-type="object">Object</button>
+        <button type="button" class="chip chip--filter" data-type="design">Design</button>
+        <button type="button" class="chip chip--filter" data-type="nature">Nature</button>
+        <button type="button" class="chip chip--filter" data-type="space">Space</button>
+        <button type="button" class="chip chip--filter" data-type="fashion">Fashion</button>
+      </div>
     </div>
+    <div class="view-toggle">
+      <button type="button" class="chip chip--filter" id="view-list" aria-pressed="false">List</button>
+      <button type="button" class="chip chip--filter" id="view-grid" aria-pressed="true">Grid</button>
+    </div>
+    <div class="result-meta" id="result-meta"></div>
   </div>
-  <div class="view-toggle">
-    <button type="button" class="chip chip--filter" id="view-list" aria-pressed="false">List</button>
-    <button type="button" class="chip chip--filter" id="view-grid" aria-pressed="true">Grid</button>
-  </div>
-  <div class="result-meta" id="result-meta"></div>
-</div>
 
-<main class="main">
-  <span class="view-label" id="view-label">View</span>
-  <div class="overview-header" id="overview-header">
-    <div class="overview-work">Work</div>
-    <div class="overview-title">Overview</div>
-    <div class="overview-meta"><span id="overview-count">0</span> artifacts</div>
-    <div class="overview-range">2024–Ongoing</div>
-  </div>
-  <ul class="artifact-list artifact-list--hidden" id="artifact-list"></ul>
-  <ul class="artifact-grid" id="artifact-grid"></ul>
-  <div class="empty-state" id="empty-state" hidden>
-    <p class="empty-title">No results</p>
-    <p class="empty-desc">Try a different search or filter.</p>
-  </div>
-</main>
+  <main class="main">
+    <div class="eco-section-header" style="margin-bottom: var(--space-4)">
+      <h2 class="eco-section-heading">Artifacts</h2>
+      <span class="eco-section-sub">Archiving what endures</span>
+    </div>
+    <div class="overview-header" id="overview-header">
+      <div class="overview-work">Work</div>
+      <div class="overview-title">Overview</div>
+      <div class="overview-meta"><span id="overview-count">0</span> artifacts</div>
+      <div class="overview-range">2024–Ongoing</div>
+    </div>
+    <ul class="artifact-list artifact-list--hidden" id="artifact-list"></ul>
+    <ul class="artifact-grid" id="artifact-grid"></ul>
+    <div class="empty-state" id="empty-state" hidden>
+      <p class="empty-title">No results</p>
+      <p class="empty-desc">Try a different search or filter.</p>
+    </div>
+  </main>
+</section>
 
-<section class="atlas-section">
-  <div class="atlas-header">
-    <h2 class="atlas-heading">Atlas</h2>
-    <span class="atlas-sub">Lab + Stage · Real spaces</span>
+<section class="atlas-section" id="atlas-section">
+  <div class="eco-section-header">
+    <h2 class="eco-section-heading">Atlas</h2>
+    <span class="eco-section-sub">Mapping the spatial index</span>
   </div>
+  <p class="eco-section-desc">The physical venues where our projects unfold. Lab (WhiteBox) explores the material; Stage (BlackBox) explores the digital.</p>
   <div class="atlas-grid" id="atlas-grid"></div>
 </section>
 
@@ -77,7 +125,7 @@
     <a href="https://artificenyc.org" target="_blank" rel="noopener">artificenyc.org</a>
   </span>
 </footer>
-<p class="keyboard-hint" id="keyboard-hint">Use arrow keys to navigate between artifacts</p>
+<p class="keyboard-hint" id="keyboard-hint">Radar &rarr; Nodes &rarr; Atlas &rarr; Artifacts</p>
 
 <script src="app.js"></script>
 </body>

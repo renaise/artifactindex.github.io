@@ -155,6 +155,156 @@ body {
 }
 .header-link:hover { color: var(--text); }
 
+/* ---- Ecosystem nav ---- */
+.eco-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.eco-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  text-decoration: none;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid transparent;
+  transition: border-color 0.12s, background 0.12s;
+}
+.eco-nav-item:hover {
+  border-color: var(--border);
+  background: var(--surface-elevated);
+}
+.eco-nav-item--active {
+  border-color: var(--border);
+  background: var(--surface-elevated);
+}
+
+.eco-nav-label {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.eco-nav-desc {
+  font-family: var(--font-caption);
+  font-size: 8px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.eco-nav-arrow {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* ---- Ecosystem sections ---- */
+.eco-section {
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.eco-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.eco-section-heading {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.eco-section-sub {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.eco-section-desc {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 60ch;
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+.eco-section-cta {
+  margin-top: var(--space-2);
+}
+
+.eco-link {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--border);
+  transition: background 0.12s, border-color 0.12s;
+}
+.eco-link:hover {
+  background: var(--surface-elevated);
+  border-color: var(--border-focus);
+}
+
+/* ---- Nodes grid ---- */
+.nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.node-card {
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.node-card:hover {
+  border-color: var(--border-focus);
+  background: var(--surface-elevated);
+}
+
+.node-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.node-id {
+  font-family: var(--font-caption);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.node-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.node-role {
+  font-family: var(--font-caption);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
 /* ---- Toolbar ---- */
 .toolbar {
   height: var(--toolbar-h);
@@ -458,27 +608,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-.atlas-header {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
-}
-
-.atlas-heading {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--text);
-}
-
-.atlas-sub {
-  font-family: var(--font-caption);
-  font-size: 11px;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-}
-
 .atlas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -662,5 +791,15 @@ body {
   }
   .atlas-grid {
     grid-template-columns: 1fr;
+  }
+  .nodes-grid {
+    grid-template-columns: 1fr;
+  }
+  .eco-nav {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .eco-nav-arrow {
+    display: none;
   }
 }

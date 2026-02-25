@@ -45,6 +45,15 @@
     { id: 'bb-005', code: 'BB-005', name: 'BlackBox 005', format: 'Stage', chapter: '005', desc: 'Digital fiction & immersive', location: 'New York City', status: 'Active' },
   ];
 
+  var NODES = [
+    { id: 'nd-001', name: 'Bobi', role: 'Co-founder · Strategy', status: 'Active' },
+    { id: 'nd-002', name: 'Renaise', role: 'Co-founder · Identity', status: 'Active' },
+    { id: 'nd-003', name: 'Studio Artifice', role: 'Production · Design', status: 'Active' },
+    { id: 'nd-004', name: 'Artifice Talent Network', role: 'Community-led creatives', status: 'Active' },
+    { id: 'nd-005', name: 'ENTER · Substack', role: 'Content · Monthly archive', status: 'Active' },
+    { id: 'nd-006', name: 'Sights: Science // Fiction', role: 'Event documentation', status: 'Active' },
+  ];
+
   var typeLabels = {
     object: 'Object',
     design: 'Design',
@@ -68,6 +77,7 @@
   var $overview = document.getElementById('overview-header');
   var $overviewCount = document.getElementById('overview-count');
   var $atlasGrid = document.getElementById('atlas-grid');
+  var $nodesGrid = document.getElementById('nodes-grid');
 
   function matchesQuery(artifact) {
     if (!currentQuery.trim()) return true;
@@ -158,6 +168,23 @@
         '<div class="atlas-desc">' + escapeHtml(space.desc) + '</div>' +
         '<div class="atlas-location">' + escapeHtml(space.location) + '</div>';
       $atlasGrid.appendChild(div);
+    });
+  }
+
+  function renderNodes() {
+    if (!$nodesGrid) return;
+    $nodesGrid.innerHTML = '';
+    NODES.forEach(function (node) {
+      var div = document.createElement('div');
+      div.className = 'node-card';
+      div.innerHTML =
+        '<div class="node-card-header">' +
+          '<span class="node-id">' + escapeHtml(node.id.toUpperCase()) + '</span>' +
+          '<span class="atlas-status atlas-status--active">' + escapeHtml(node.status) + '</span>' +
+        '</div>' +
+        '<div class="node-name">' + escapeHtml(node.name) + '</div>' +
+        '<div class="node-role">' + escapeHtml(node.role) + '</div>';
+      $nodesGrid.appendChild(div);
     });
   }
 
@@ -273,6 +300,7 @@
   });
 
   render();
+  renderNodes();
   renderAtlas();
   setView('grid');
 })();
