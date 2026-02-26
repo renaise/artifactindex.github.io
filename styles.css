@@ -155,6 +155,156 @@ body {
 }
 .header-link:hover { color: var(--text); }
 
+/* ---- Ecosystem nav ---- */
+.eco-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.eco-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  text-decoration: none;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid transparent;
+  transition: border-color 0.12s, background 0.12s;
+}
+.eco-nav-item:hover {
+  border-color: var(--border);
+  background: var(--surface-elevated);
+}
+.eco-nav-item--active {
+  border-color: var(--border);
+  background: var(--surface-elevated);
+}
+
+.eco-nav-label {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.eco-nav-desc {
+  font-family: var(--font-caption);
+  font-size: 8px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.eco-nav-arrow {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* ---- Ecosystem sections ---- */
+.eco-section {
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.eco-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.eco-section-heading {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.eco-section-sub {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.eco-section-desc {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 60ch;
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+.eco-section-cta {
+  margin-top: var(--space-2);
+}
+
+.eco-link {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--border);
+  transition: background 0.12s, border-color 0.12s;
+}
+.eco-link:hover {
+  background: var(--surface-elevated);
+  border-color: var(--border-focus);
+}
+
+/* ---- Nodes grid ---- */
+.nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.node-card {
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.node-card:hover {
+  border-color: var(--border-focus);
+  background: var(--surface-elevated);
+}
+
+.node-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.node-id {
+  font-family: var(--font-caption);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.node-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.node-role {
+  font-family: var(--font-caption);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
 /* ---- Toolbar ---- */
 .toolbar {
   height: var(--toolbar-h);
@@ -278,7 +428,7 @@ body {
   color: var(--text-tertiary);
 }
 
-/* ---- List view (Mouthwash-style) ---- */
+/* ---- List view ---- */
 .artifact-list {
   list-style: none;
 }
@@ -286,7 +436,7 @@ body {
 
 .artifact-list-link {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-4);
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--border);
@@ -298,29 +448,45 @@ body {
 .artifact-list-link:hover { color: var(--text-secondary); }
 .artifact-list-link:focus-visible { background: var(--surface); }
 
-.artifact-list-code {
-  font-family: var(--font-caption);
-  font-size: 12px;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
+.artifact-list-thumb {
   flex-shrink: 0;
-  min-width: 4.5em;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.artifact-list-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .artifact-list-title {
   font-size: 14px;
+  flex: 1;
 }
 
-/* ---- Grid view (overview / thumbnail grid, two-column spread feel) ---- */
+.artifact-list-type {
+  font-family: var(--font-caption);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+/* ---- Grid view ---- */
 .artifact-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-5);
 }
 @media (min-width: 900px) {
   .artifact-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: var(--space-5);
   }
 }
@@ -334,41 +500,11 @@ body {
   text-align: center;
   background: transparent;
   transition: background 0.12s ease;
-  padding-top: 14px;
 }
 .artifact-card:hover {
   background: var(--surface);
 }
 .artifact-card:hover .artifact-actions { opacity: 1; }
-
-/* Small auxiliary circle (label) */
-.artifact-aux-circle {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -50%);
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 2;
-  background: var(--bg);
-}
-
-.artifact-aux {
-  font-family: var(--font-caption);
-  font-size: 6px;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-  text-align: center;
-  line-height: 1.15;
-  word-break: break-all;
-  padding: 0 2px;
-}
 
 .artifact-thumb-link {
   display: block;
@@ -377,11 +513,10 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 120px;
-  margin: 14px 0 0;
+  max-width: 140px;
+  margin: 0 auto;
 }
 
-/* Petri dish: circular artifact */
 .artifact-thumb {
   width: 100%;
   aspect-ratio: 1;
@@ -391,6 +526,13 @@ body {
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.artifact-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .artifact-thumb-inner {
@@ -415,6 +557,7 @@ body {
   gap: var(--space-2);
   opacity: 0;
   transition: opacity 0.12s ease;
+  border-radius: 50%;
 }
 
 .artifact-actions .btn {
@@ -436,14 +579,6 @@ body {
 .artifact-actions .btn-copy {
   appearance: none;
 }
-.artifact-title {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-.artifact-title:hover {
-  text-decoration: underline;
-}
 
 .artifact-body {
   padding: var(--space-3) var(--space-2) 0;
@@ -452,32 +587,102 @@ body {
   width: 100%;
 }
 
-.artifact-filename {
-  font-family: var(--font-caption);
-  font-size: 10px;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  text-decoration: none;
-  display: block;
-}
-.artifact-filename:hover { color: var(--text); }
-.artifact-card .artifact-meta { margin-top: 2px; }
-
-.artifact-title {
-  font-size: 13px;
+.artifact-title-text {
+  font-size: 12px;
   font-weight: 400;
-  margin-bottom: 2px;
   line-height: 1.3;
+  margin-bottom: 2px;
+  color: var(--text);
 }
-.artifact-card .artifact-title { font-size: 12px; }
 
 .artifact-meta {
+  font-family: var(--font-caption);
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* ---- ATLAS section ---- */
+.atlas-section {
+  padding: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.atlas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.atlas-card {
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.atlas-card:hover {
+  border-color: var(--border-focus);
+  background: var(--surface-elevated);
+}
+
+.atlas-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.atlas-code {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
   color: var(--text-tertiary);
 }
-.artifact-card .artifact-meta { font-size: 9px; }
+
+.atlas-status {
+  font-family: var(--font-caption);
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+}
+.atlas-status--active {
+  color: #6ee7a0;
+  border-color: #2a5a3a;
+}
+.atlas-status--archived {
+  color: var(--text-tertiary);
+}
+
+.atlas-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.atlas-format {
+  font-family: var(--font-caption);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.atlas-desc {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.atlas-location {
+  font-family: var(--font-caption);
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
 
 /* ---- Empty state ---- */
 .empty-state {
@@ -583,5 +788,18 @@ body {
   .filter-chips { flex-wrap: wrap; }
   .artifact-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .atlas-grid {
+    grid-template-columns: 1fr;
+  }
+  .nodes-grid {
+    grid-template-columns: 1fr;
+  }
+  .eco-nav {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .eco-nav-arrow {
+    display: none;
   }
 }
