@@ -46,12 +46,11 @@
   ];
 
   var NODES = [
-    { id: 'nd-001', name: 'Bobi', role: 'Co-founder · Strategy', status: 'Active' },
-    { id: 'nd-002', name: 'Renaise', role: 'Co-founder · Identity', status: 'Active' },
-    { id: 'nd-003', name: 'Studio Artifice', role: 'Production · Design', status: 'Active' },
-    { id: 'nd-004', name: 'Artifice Talent Network', role: 'Community-led creatives', status: 'Active' },
-    { id: 'nd-005', name: 'ENTER · Substack', role: 'Content · Monthly archive', status: 'Active' },
-    { id: 'nd-006', name: 'Sights: Science // Fiction', role: 'Event documentation', status: 'Active' },
+    { id: 'nd-001', name: 'Renaise', role: 'Founder · Identity & Direction', status: 'Active' },
+    { id: 'nd-002', name: 'Studio Artifice', role: 'Production · Design', status: 'Active' },
+    { id: 'nd-003', name: 'Artifice Talent Network', role: 'Community-led creatives', status: 'Active' },
+    { id: 'nd-004', name: 'ENTER · Substack', role: 'Content · Monthly archive', status: 'Active' },
+    { id: 'nd-005', name: 'Sights: Science // Fiction', role: 'Event documentation', status: 'Active' },
   ];
 
   var typeLabels = {

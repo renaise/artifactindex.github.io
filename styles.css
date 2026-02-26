@@ -37,8 +37,8 @@
   --border: #2a2a2e;
   --border-focus: #3f3f45;
   --text: #ededef;
-  --text-secondary: #9898a0;
-  --text-tertiary: #6b6b72;
+  --text-secondary: #a8a8b0;
+  --text-tertiary: #85858e;
   --font-display: 'Helvetica Now Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-caption: 'Fragment Mono', ui-monospace, monospace;
   --space-1: 4px;
@@ -86,6 +86,7 @@ body {
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text);
   text-decoration: none;
 }
@@ -94,8 +95,9 @@ body {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--text-tertiary);
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .search-wrap {
@@ -149,7 +151,7 @@ body {
 .header-link {
   font-family: var(--font-display);
   font-size: 13px;
-  letter-spacing: -1px;
+  letter-spacing: 0;
   color: var(--text-secondary);
   text-decoration: none;
 }
@@ -190,12 +192,14 @@ body {
   font-size: 11px;
   font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--text);
 }
 .eco-nav-desc {
   font-family: var(--font-caption);
-  font-size: 8px;
+  font-size: 9px;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--text-tertiary);
 }
 .eco-nav-arrow {
@@ -227,15 +231,16 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
 .eco-section-desc {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-secondary);
   max-width: 60ch;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: var(--space-4);
 }
 
@@ -247,6 +252,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text);
   text-decoration: none;
   padding: var(--space-2) var(--space-4);
@@ -287,6 +293,7 @@ body {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -302,6 +309,7 @@ body {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-secondary);
 }
 
@@ -327,6 +335,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -340,9 +349,9 @@ body {
   padding: 6px 12px;
   font-family: var(--font-caption);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text-secondary);
   background: transparent;
   border: 1px solid transparent;
@@ -363,6 +372,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -382,12 +392,7 @@ body {
 }
 
 .view-label {
-  display: block;
-  font-family: var(--font-caption);
-  font-size: 11px;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-  margin-bottom: var(--space-4);
+  display: none;
 }
 
 /* ---- Overview header (grid view) ---- */
@@ -411,6 +416,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -418,6 +424,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-secondary);
 }
 
@@ -425,6 +432,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -473,6 +481,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
   flex-shrink: 0;
 }
@@ -597,8 +606,9 @@ body {
 
 .artifact-meta {
   font-family: var(--font-caption);
-  font-size: 9px;
+  font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -636,6 +646,7 @@ body {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -643,7 +654,8 @@ body {
   font-family: var(--font-caption);
   font-size: 9px;
   text-transform: uppercase;
-  padding: 2px 6px;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
   border: 1px solid var(--border);
 }
 .atlas-status--active {
@@ -666,6 +678,7 @@ body {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-secondary);
   margin-bottom: var(--space-2);
 }
@@ -679,8 +692,9 @@ body {
 
 .atlas-location {
   font-family: var(--font-caption);
-  font-size: 9px;
+  font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -709,6 +723,7 @@ body {
   font-family: var(--font-caption);
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 .footer a {
@@ -724,6 +739,7 @@ body {
   font-family: var(--font-caption);
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--text-tertiary);
   text-align: center;
 }
